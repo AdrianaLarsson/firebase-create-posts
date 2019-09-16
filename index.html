@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Adriana Pedroza Larsson</title>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+        <div class="nav-wrapper container">
+          <li class="create-posts">
+            <nav<div class="z-depth-3 green light green center"><a href="#" class="blue-text modal-trigger" data-target="modal-create"><h1>Create post</h1></a> </div>
+          </li>
+        </a>
+            <nav class="z-depth-3 light-green center"><h1>Adriana Larsson</h1></nav>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+            </span>
+          </ul>
+        </div>
+      </nav>
+
+  <!-- CREATE POST MODAL -->
+        <div id="modal-create" class="modal">
+          <div class="modal-content">
+            <h4>Create Blog Post</h4><br />
+            <form id="create-form">
+              <div class="input-field">
+                <input type="text" id="title" required>
+                <label for="title">Title</label>
+              </div>
+              <div class="input-field">
+                <textarea id="content" class="materialize-textarea" required></textarea>
+                <label for="content">Description</label>
+              </div>
+              <button class="btn green z-depth-5">Create New Post</button>
+            </form>
+          </div>
+        </div>
+       <!-- UPDATE POST MODAL -->
+       <div id="modal-update" class="modal">
+        <div class="modal-content active">
+          <h4>Update Blog Post</h4><br />
+          <form id="update-form">
+            <div class="input-field">
+              <input type="text" id="title" required>
+              <label for="title">Title</label>
+            </div>
+            <div class="input-field">
+              <textarea id="content" class="materialize-textarea" required></textarea>
+              <label for="content">Description</label>
+            </div>
+            <button class="google-login btn blue z-depth-0">Update Post</button>
+          </form>
+        </div>
+      </div>
+        <!-- POST TITLE -->
+        <div class="container" style="margin-top: 100px;">
+          <ul class="collapsible z-depth-0" id="posts" style="border: none;">
+         
+          </ul>
+        </div>
+
+  
+    
+    
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-functions.js"></script>
+      
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  const config = {
+    apiKey: "AIzaSyB_hsctI1RD2t3G3eaDZFhnToTdx72M8BA",
+    authDomain: "second-task-firebase.firebaseapp.com",
+    databaseURL: "https://second-task-firebase.firebaseio.com",
+    projectId: "second-task-firebase",
+    storageBucket: "second-task-firebase.appspot.com",
+    messagingSenderId: "370113106291",
+    appId: "1:370113106291:web:d41df1a87629072f067506"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(config);
+  const auth = firebase.auth();
+  const fs = firebase.firestore();
+  const functions = firebase.functions();
+</script>
+
+
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="scripts/auth.js"></script>
+      <script src="scripts/index.js"></script>
+
+    
+</body>
+</html>
