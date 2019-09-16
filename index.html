@@ -8,21 +8,36 @@
     <title>Adriana Pedroza Larsson</title>
 </head>
 <body>
-
 <!-- NAVBAR -->
 
-        <div class="nav-wrapper container">
-          <li class="create-posts">
-            <nav<div class="z-depth-3 green light green center"><a href="#" class="blue-text modal-trigger" data-target="modal-create"><h1>Create post</h1></a> </div>
-          </li>
-        </a>
-            <nav class="z-depth-3 light-green center"><h1>Adriana Larsson</h1></nav>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <nav class="z-depth-3 light-green center"><h1>GENIUS-API</h1></nav>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-            </span>
-          </ul>
-        </div>
-      </nav>
+      </span>
+    </ul>
+  </div>
+</nav>
+   <!-- show the artist and the song from API GENIUS API -->
+ <div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+      <li>
+            <div class="card-panel hoverable green lighten-4"><div class="collapsible-header grey lighten-3 ">  <button onclick="song(16775)">Artists</button></div></div>
+            <div class="collapsible-body white"> <th><div class="artist-list center" id="artists"> </th></div></div>
+      </li>
+      <li>
+        <div class="card-panel hoverable blue lighten-4"><div class="collapsible-header grey lighten-3 ">  <button onclick="song(16775)">Titles</button></div></div>
+        <div class="collapsible-body white"> <th><div class="title-list center" id="title"> </th></div></div>
+      </li>
+      
+    </ul>
+  </div>
+
+
+  <div class="nav-wrapper container">
+      <li class="create-posts">
+        <nav<div class="z-depth-3 green light green center"><a href="#" class="blue-text modal-trigger" data-target="modal-create"><h1>Create post</h1></a> </div>
+      </li>
+    </a>
 
   <!-- CREATE POST MODAL -->
         <div id="modal-create" class="modal">
@@ -100,8 +115,12 @@
 
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script src="scripts/auth.js"></script>
+      <script src="scripts/storage.js"></script>
       <script src="scripts/index.js"></script>
+     
+   
+
+
 
     
 </body>

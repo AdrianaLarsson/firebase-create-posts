@@ -1,38 +1,6 @@
-//get a reference to the unordered list
-const postList = document.querySelector('#posts');
-console.log("postlist", postList)
 
-
-const setupPosts = (data)=> {
-
-    if (data.length){
-        let html = '';
-        data.forEach(doc =>{
-            const post = doc.data();
-    
-            const li = `
-            <li>
-            <div id="post-${doc.id}" class="card-panel hoverable blue lighten-4">
-              
-                <div class="collapsible-header grey lighten-3">${post.title}
-               
-                <div id="${doc.id}" title="${post.title}" content="${post.content}">
-                
-                <i class="edit material-icons modal-trigger" href="#modal-update">edit</i>
-                <i class="delete material-icons red-text">delete</i>
-                </div> 
-                </div>   
-                </div>
-
-                </div>
-             
-                  <div class="collapsible-body green lighten-4"><div class="collapsible-header grey lighten-3">${post.content}</div>
-            <li>
-            `;
-            html += li;
-        });
-        postList.innerHTML = html
 //update posts
+
         const editIcons = document.querySelectorAll('.edit');
         editIcons.forEach(editIcon =>{
             editIcon.addEventListener('click', (e)=>{
@@ -112,6 +80,43 @@ createPost.addEventListener('submit', (e)=>{
 })
 
 
+
+//links/ref to the id="artist" and (title)
+function song(id){
+    var artist = document.querySelector("#artists");
+    var title = document.querySelector("#title");
+   // var images = document.querySelector("#images")
+
+   //fetsh url, genius rapidapi, get method, api host and api key
+    fetch(`https://genius.p.rapidapi.com/artists/${id}/songs`, {
+        "method":"GET",
+        "headers": {
+            "x-rapidapi-host": "genius.p.rapidapi.com",
+            "x-rapidapi-key": "77e948d1f6msh1fb9c1d3089d12bp121fb6jsn41e647859f85"
+        }
+    })
+    //show the apikey
+    .then (function(response){
+        response.json()
+        .then(function(songs){
+            console.log(songs.response);
+            songs.response.songs.forEach(function(element){
+                console.log(element);
+                let img = element.primary_artist.image_url;
+                console.log(img)
+              
+                console.log( " Artist " + element.primary_artist.name + "" + " Title " + element.full_title)
+                artist.innerHTML +=  `</br>`+  element.primary_artist.name 
+                title.innerHTML += `</br>`+  element.full_title 
+                id.innerHTML = `</br>`+ " ID " + element.id
+
+                // var image = images.innerHTML += `<img src="${img}" />`;
+                 
+            });
+
+        })
+    })
+}
 
 
 
