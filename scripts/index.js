@@ -1,4 +1,37 @@
+//get a reference to the unordered list
+const postList = document.querySelector('#posts');
+console.log("postlist", postList)
 
+
+const setupPosts = (data)=> {
+
+    if (data.length){
+        let html = '';
+        data.forEach(doc =>{
+            const post = doc.data();
+    
+            const li = `
+            <li>
+            <div id="post-${doc.id}" class="card-panel hoverable blue lighten-4">
+              
+                <div class="collapsible-header grey lighten-3">${post.title}
+               
+                <div id="${doc.id}" title="${post.title}" content="${post.content}">
+                
+                <i class="edit material-icons modal-trigger" href="#modal-update">edit</i>
+                <i class="delete material-icons red-text">delete</i>
+                </div> 
+                </div>   
+                </div>
+
+                </div>
+             
+                  <div class="collapsible-body green lighten-4"><div class="collapsible-header grey lighten-3">${post.content}</div>
+            <li>
+            `;
+            html += li;
+        });
+        postList.innerHTML = html
 //update posts
 
         const editIcons = document.querySelectorAll('.edit');
@@ -104,11 +137,12 @@ function song(id){
                 console.log(element);
                 let img = element.primary_artist.image_url;
                 console.log(img)
-              
                 console.log( " Artist " + element.primary_artist.name + "" + " Title " + element.full_title)
                 artist.innerHTML +=  `</br>`+  element.primary_artist.name 
                 title.innerHTML += `</br>`+  element.full_title 
                 id.innerHTML = `</br>`+ " ID " + element.id
+             
+                console.log(saveGenius(element.primary_artist.name, element.full_title, element.id))
 
                 // var image = images.innerHTML += `<img src="${img}" />`;
                  
@@ -117,6 +151,11 @@ function song(id){
         })
     })
 }
+
+
+
+
+
 
 
 
